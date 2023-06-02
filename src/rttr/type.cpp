@@ -206,6 +206,13 @@ variant type::create(vector<argument> args) const
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
+variant type::create() const
+{
+    return create(std::vector<argument>());
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
 bool type::destroy(variant& obj) const RTTR_NOEXCEPT
 {
     return get_destructor().invoke(obj);

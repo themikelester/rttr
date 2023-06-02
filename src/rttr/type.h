@@ -679,7 +679,17 @@ class RTTR_API type
          *
          * \return Returns an instance of the given type.
          */
-        variant create(std::vector<argument> args = std::vector<argument>()) const;
+        variant create(std::vector<argument> args) const;
+
+        /*!
+         * \brief Creates an instance of the current type using the default constructor.
+         *
+         * \remark If no default constructor exists then it will not be invoked.
+         *         Constructors with registered \ref default_arguments will be honored.
+         *
+         * \return Returns an instance of the given type.
+         */
+        variant create() const;
 
         /*!
          * \brief Returns the corresponding destructor for this type.
